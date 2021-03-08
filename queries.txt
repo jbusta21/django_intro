@@ -1,0 +1,33 @@
+>>> dojo_1 = Dojo.objects.create(name = "Dojo 1", city = "Dallas", state = "Texas")
+>>> dojo_2 = Dojo.objects.create(name = "Dojo 2", city = "Houston", state = "Texas")
+>>> dojo_3 = Dojo.objects.create(name = "Dojo 3", city = "Palm Beach", state = "Florida")
+
+>>> dojo_1.delete()
+>>> dojo_2.delete()
+>>> dojo_3.delete()
+
+>>> dojo_4 = Dojo.objects.create(name = "Dojo 4", city = "Dallas", state = "Texas")
+>>> dojo_5 = Dojo.objects.create(name = "Dojo 5", city = "Houston", state = "Texas")
+>>> dojo_6 = Dojo.objects.create(name = "Dojo 6", city = "Palm Beach", state = "Florida")
+
+>>> ninja_1 = Dojo.objects.create(first_name = "John", last_name = "Smith", dojo = dojo_4)
+>>> ninja_2 = Dojo.objects.create(first_name = "David", last_name = "Smith", dojo = dojo_5)
+>>> ninja_3 = Dojo.objects.create(first_name = "Tarzan", last_name = "Smith", dojo = dojo_6)
+
+>>> ninja_4 = Dojo.objects.create(first_name = "Jim", last_name = "Smith", dojo = dojo_5)
+>>> ninja_5 = Dojo.objects.create(first_name = "Kim", last_name = "Smith", dojo = dojo_5)
+>>> ninja_6 = Dojo.objects.create(first_name = "Emily", last_name = "Smith", dojo = dojo_5)
+
+>>> ninja_7 = Dojo.objects.create(first_name = "Jesse", last_name = "Smith", dojo = dojo_6)
+>>> ninja_8 = Dojo.objects.create(first_name = "Logan", last_name = "Smith", dojo = dojo_6)
+>>> ninja_9 = Dojo.objects.create(first_name = "Chuy", last_name = "Smith", dojo = dojo_6)
+
+>>> Dojo.objects.first().ninjas.all()
+
+>>> Dojo.objects.last().ninjas.all()
+
+>>> Ninja.objects.last().dojo
+
+>>> Dojo.objects.create(descriptiion = models.TextField())
+
+>>> Dojo.objects.create(name = "Dojo_7", city = "El Paso", state = "Texas")
